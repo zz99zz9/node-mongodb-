@@ -1,8 +1,11 @@
 var express = require('express')
 var path = require('path')
+var mongoose = require('mongoose')
 var port = process.env.PORT || 3000
 // process是个全局变量，用来获取环境中的变量
 var app = express()
+
+mongoose.connect('mongodb://localhost/imooc')
 
 app.set('views', './views/pages')
 // 设置视图的根目录

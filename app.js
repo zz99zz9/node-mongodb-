@@ -8,11 +8,11 @@ app.set('views', './views/pages')
 // 设置视图的根目录
 app.set('view engine', 'pug')
 // 设置默认的模板引擎
-// app.use(express.bodyParser());   过版本语法，现已不支持
-app.use(bodyParser.urlencoded());
+// app.use(express.bodyParser());  // 过版本语法，现已不支持
+//app.use(bodyParser.urlencoded());
 //将表单里的数据进行格式化
-//app.use(express.static(path.join(__dirname,'node_modules')))  过去版语法，现已不支持
-app.use(serveStatic('node_modules'));
+app.use(express.static(path.join(__dirname,'node_modules'))) // 过去版语法，现已不支持
+//app.use(serveStatic('node_modules'));
 // 设置静态目录，其实就是使view中引入的东西路径正确
 app.listen(port)
 

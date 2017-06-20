@@ -45,7 +45,10 @@ app.get('/admin/list', function (req, res) {
       country: '美国',
       year: 2014,
       language: '英语',
-      flash: 'http://player.youku.com/player.php/sid/XNjA1Njc0NTUy/v.swf'
+      flash: 'http://player.youku.com/player.php/sid/XNjA1Njc0NTUy/v.swf',
+      meta:{
+        createdAt:2017-5-10
+      }
     },{
       title: '机械战警2',
       _id: 2,
@@ -53,7 +56,10 @@ app.get('/admin/list', function (req, res) {
       country: '美国',
       year: 2014,
       language: '英语',
-      flash: 'http://player.youku.com/player.php/sid/XNjA1Njc0NTUy/v.swf'
+      flash: 'http://player.youku.com/player.php/sid/XNjA1Njc0NTUy/v.swf',
+    //   meta:{
+    //     createdAt:2017-5-10
+    //   }
     }]
     })
 })

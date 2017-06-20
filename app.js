@@ -1,12 +1,19 @@
 var express = require('express')
 var path = require('path')
 var port = process.env.PORT || 3000
+// process是个全局变量，用来获取环境中的变量
 var app = express()
 
 app.set('views', './views/pages')
-app.set('view engine', 'jade')
-//app.use(express.bodyParser())
-app.use(express.static(path.join(__dirname,'node_modules')))
+// 设置视图的根目录
+app.set('view engine', 'pug')
+// 设置默认的模板引擎
+// app.use(express.bodyParser());   过版本语法，现已不支持
+app.use(bodyParser.urlencoded());
+//将表单里的数据进行格式化
+//app.use(express.static(path.join(__dirname,'node_modules')))  过去版语法，现已不支持
+app.use(serveStatic('node_modules'));
+// 设置静态目录，其实就是使view中引入的东西路径正确
 app.listen(port)
 
 console.log('started on prot 3000')
